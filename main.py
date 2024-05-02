@@ -76,7 +76,7 @@ def switch_event():
 
 def buscar_curso():
     curso_secciones.clear()
-    res = db["cursos"].find({"id_curso": comboboxCurso_var.get()})
+    res = db["cursos"].find({"claveCurso": comboboxCurso_var.get()})
     if res != None:
         for doc in res:
             curso_secciones.append(doc["seccion"])
@@ -85,7 +85,7 @@ def buscar_curso():
         panel.insert("end", text = 'El curso escrito no existe en la base de datos.\n')
 
 def buscar_material():
-    res = db["materials"].find_one({"_id": material_variable.get().upper()})
+    res = db["materials"].find_one({"id": material_variable.get().upper()})
     if res != None:
         if int(res["cantidad"]) == 0:
             panel.insert("end", text = f'El material escrito "{material_variable.get()}" ya no tiene elementos en stock.\n')
