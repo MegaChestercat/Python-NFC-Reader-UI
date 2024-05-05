@@ -425,7 +425,7 @@ def scan():
                     panel.insert("end", text = id + '\n')
                     if combobox_var.get() == "Acceso":
                         db["accesos"].insert_one(
-                            {"id_usuario": search["_id"],
+                            {"id_usuario": id,
                              "acceso": comboboxAcesso_var.get(),
                              "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
                     elif combobox_var.get() == "Asistencia":
@@ -444,29 +444,29 @@ def scan():
                         elif diferencia >= 20:
                             status = clase_estado[2]
                         db["asistencia_cursos"].insert_one(
-                            {"id_usuario": search["_id"],
+                            {"id_usuario": id,
                              "id_curso": comboboxCurso_var.get(),
                              "seccion": comboboxSeccion_var.get(),
                              "estado": status,
                              "time": hora_actual})
                     elif combobox_var.get() == "Material":
                          db["prestamo_materiales"].insert_one(
-                            {"id_usuario": search["_id"],
-                             "id_material": material_variable.get(),
+                            {"id_usuario": id,
+                             "id_material": material_variable.get().upper(),
                              "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
                     elif combobox_var.get() == "Reservar Salón":
                         db["reservacion_salones"].insert_one(
-                            {"id_usuario": search["_id"],
+                            {"id_usuario": id,
                              "salon": salon_variable.get(),
                              "initial_time": datePicker_var.get().replace("/", "-") + " " + timePicker_var.get(),
                              "end_time": datePicker2_var.get().replace("/", "-") + " " + timePicker2_var.get()})
                     elif combobox_var.get() == "Gimnasio":
                         db["gym_accesos"].insert_one(
-                            {"id_usuario": search["_id"],
+                            {"id_usuario": id,
                              "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
                     elif combobox_var.get() == "Pago Estacionamiento":
                         db["estacionamiento_pagos"].insert_one(
-                            {"id_usuario": search["_id"],
+                            {"id_usuario": id,
                              "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
                     
                 else:
