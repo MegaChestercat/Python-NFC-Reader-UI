@@ -331,7 +331,7 @@ combobox_title.place(relx=0.04, rely=0.08)
 comboboxAcesso_var = tk.StringVar()
 entrada_entry= tk.CTkComboBox(master=frame, values=entradas, variable=comboboxAcesso_var)
 material_variable = tk.StringVar()
-nombre_material_entry= tk.CTkEntry(master=frame, placeholder_text="Nombre Material", textvariable= material_variable)
+nombre_material_entry= tk.CTkEntry(master=frame, placeholder_text="ID Material", textvariable= material_variable)
 salon_variable = tk.StringVar()
 salon_entry= tk.CTkEntry(master=frame, placeholder_text="CN-103", textvariable= salon_variable)
 
@@ -365,7 +365,7 @@ reservacionDispBtn = tk.CTkButton(master=frame, text="Ver Disponibilidad", comma
 acceso_title = tk.CTkLabel(master=frame, text="Acceso Universidad:", font=("Arial", 14), text_color='black')
 curso_title = tk.CTkLabel(master=frame, text="ID Curso:", font=("Arial", 14), text_color='black')
 seccion_title = tk.CTkLabel(master=frame, text="Sección:", font=("Arial", 14), text_color='black')
-material_title = tk.CTkLabel(master=frame, text="Nombre Material:", font=("Arial", 14), text_color='black')
+material_title = tk.CTkLabel(master=frame, text="ID Material:", font=("Arial", 14), text_color='black')
 salon_title = tk.CTkLabel(master=frame, text="Salón (e.g. CN-103):", font=("Arial", 14), text_color='black')
 
 diaInicio_title = tk.CTkLabel(master=frame, text="Día Inicio (YYY/MM/DD):", font=("Arial", 14), text_color='black')
